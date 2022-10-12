@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+//important points: 
+//tc: 0(n) ,sc: 0(n)
+
+int sum(int n){
+   
+   if(n==0){
+       return 0;
+   }
+   
+   return n+sum(n-1);
+}
+int fact(int n){
+   
+   if(n==1){
+       return 1;
+   }
+   
+   return n*fact(n-1);
+}
+int main() {
+	// your code goes here
+	
+
+	int n;
+	cin>>n;
+	int ans=sum(n);
+	cout<<ans<<endl;
+	cout<<fact(n)<<endl;
+	return 0;
+}
