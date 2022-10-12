@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+//print 5 time name using recursion
+void f(string name,int n){
+    if(n==0){
+        return;
+    }
+    cout<<name<<" ";
+    f(name,n-1);
+}
+//print 1 to n using recursion
+void print_n(int n){
+    if(n==0){
+        return;
+    }
+    print_n(n-1);
+    cout<<n<<" ";
+}
+//print 1 to n using recursion
+void last(int n){
+    if(n==0){
+        return;
+    }
+    cout<<n<<" ";
+    last(n-1);
+    
+}
+int main() {
+	// your code goes here
+	
+	string s;
+	cin>>s;
+	int n;
+	cin>>n;
+	f(s,n);
+	cout<<endl;
+	print_n(n);
+	cout<<endl;
+	last(n);
+	cout<<endl;
+	return 0;
+}
