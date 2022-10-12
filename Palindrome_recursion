@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+//important points: 
+//tc: 0(n) ,sc: 0(n)
+
+bool solve(string s,int l,int r){
+    if(l>=r){
+        return 1;
+    }
+    if(s[l]!=s[r]){
+        return 0;
+    }
+    return 1&&solve(s,l+1,r-1);
+}
+int main() {
+	// your code goes here
+	string s;
+	cin>>s;
+	int l=0;
+	int r=s.length()-1;
+	cout<<solve(s,l,r);
+	return 0;
+}
