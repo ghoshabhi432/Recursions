@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+//important points: 
+//tc: 0(n) ,sc: 0(n)
+void solve_two_pointer(vector<int> &arr,int l,int r){
+    if(l>=r){
+        return;
+    }
+    swap(arr[l],arr[r]);
+    solve_two_pointer(arr,l+1,r-1);
+}
+void solve_one_pointer(vector<int> &arr,int l){
+    
+    if(l>(arr.size()/2)){
+        return;
+    }
+    swap(arr[l],arr[arr.size()-l-1]);
+    solve_one_pointer(arr,l+1);
+}
+int main() {
+	// your code goes here
+	
+	int n;
+	cin>>n;
+	vector<int> arr;
+	int t;
+	for(int i=0;i<n;i++){
+	    cin>>t;
+	    arr.push_back(t);
+	}
+	int l=0;
+	int r=n-1;
+	solve_two_pointer(arr,l,r);
+	for(int i=0;i<n;i++){
+	    cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+	solve_one_pointer(arr,l);
+	for(int i=0;i<n;i++){
+	    cout<<arr[i]<<" ";
+	}
+	return 0;
+}
